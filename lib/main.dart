@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'word_hurdle_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,15 +13,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Word Hurdle Puzzle',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.deepPurple,
-          brightness: Brightness.dark, // tmavší kontrast
+          brightness: Brightness.dark,
         ),
         useMaterial3: true,
       ),
-      builder: EasyLoading.init(), // inicializuje načítavanie
-      home: const Placeholder(),   // dočasný widget
+      builder: EasyLoading.init(),
+      home: const WordHurdlePage(), // ← nahradené
     );
   }
 }
